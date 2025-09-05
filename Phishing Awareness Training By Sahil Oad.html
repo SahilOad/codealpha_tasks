@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Awareness Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab.active {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .quiz-option:hover {
+            background-color: #eff6ff;
+        }
+        .quiz-option.selected {
+            background-color: #dbeafe;
+            border-color: #3b82f6;
+        }
+        .quiz-option.correct {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+        }
+        .quiz-option.incorrect {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900">Phishing Awareness Training By Sahil Oad</h1>
+            <p class="mt-2 text-lg text-gray-600">Stay Secure: Learn to Spot and Avoid Phishing Attacks</p>
+        </header>
+
+        <main class="bg-white rounded-2xl shadow-lg">
+            <!-- Navigation Tabs -->
+            <nav class="border-b border-gray-200">
+                <ul class="flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500" id="tab-nav">
+                    <li class="mr-2">
+                        <button class="tab active inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="introduction">Introduction</button>
+                    </li>
+                    <li class="mr-2">
+                        <button class="tab inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="emails">Phishing Emails</button>
+                    </li>
+                    <li class="mr-2">
+                        <button class="tab inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="websites">Fake Websites</button>
+                    </li>
+                    <li class="mr-2">
+                        <button class="tab inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="tactics">Social Engineering</button>
+                    </li>
+                    <li class="mr-2">
+                        <button class="tab inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="best-practices">Best Practices</button>
+                    </li>
+                    <li>
+                        <button class="tab inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300" data-tab="quiz">Interactive Quiz</button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Tab Content -->
+            <div id="tab-content-container" class="p-6 sm:p-8">
+
+                <!-- Introduction -->
+                <div id="introduction" class="tab-content active prose max-w-none">
+                    <h2 class="text-2xl font-semibold mb-4">What is Phishing?</h2>
+                    <p>Phishing is a type of cyber attack where criminals impersonate legitimate organizations via email, text message, or other communication channels to steal sensitive information. This can include login credentials, credit card numbers, bank account details, and other personal data.</p>
+                    <p>These attacks are effective because they often look like they come from a trusted source, like your bank, a popular social media site, or even your own company's IT department. By understanding their methods, you can become the first line of defense against these threats.</p>
+                    <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 text-blue-800 rounded-r-lg">
+                        <p class="font-semibold">Key takeaway:</p>
+                        <p>Phishing relies on deception. The goal is to trick you into giving up valuable information or taking an action you shouldn't.</p>
+                    </div>
+                </div>
+
+                <!-- Phishing Emails -->
+                <div id="emails" class="tab-content prose max-w-none">
+                    <h2 class="text-2xl font-semibold mb-4">How to Recognize Phishing Emails</h2>
+                    <p>Phishing emails are designed to look convincing, but there are often tell-tale signs. Here’s a real-world example and what to look for:</p>
+
+                    <!-- Example Email -->
+                    <div class="my-6 border border-gray-300 rounded-lg bg-gray-50 p-4">
+                        <div class="border-b pb-2 mb-2">
+                            <p><strong>From:</strong> PayPaI Support &lt;support@paypai-security-alert.com&gt;</p>
+                            <p><strong>Subject:</strong> Urgent: Your Account Has Been Limited</p>
+                        </div>
+                        <p>Dear Valued Customer,</p>
+                        <p class="my-2">We've noticed some unusual activity on your account. For your security, we have temporarily limited what you can do with your account.</p>
+                        <p class="my-2">Please log in to your account to confirm your identity and restore full access.</p>
+                        <a href="#" class="text-blue-600 underline">Click here to verify your account</a>
+                        <p class="mt-2">Thank you for your cooperation.</p>
+                        <p>Sincerely,</p>
+                        <p>The PayPaI Team</p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-2">Red Flags in This Example:</h3>
+                    <ul>
+                        <li><strong>Suspicious Sender Address:</strong> The email is from "paypai-security-alert.com", not "paypal.com". Attackers often use slightly altered domain names. Notice the 'I' instead of 'l' in "PayPaI".</li>
+                        <li><strong>Generic Greeting:</strong> "Dear Valued Customer" is impersonal. Legitimate companies will usually address you by your name.</li>
+                        <li><strong>Sense of Urgency:</strong> The subject line "Urgent" and phrases like "temporarily limited" are designed to make you panic and act without thinking.</li>
+                        <li><strong>Suspicious Links:</strong> Hover your mouse over the link (don't click!). The actual destination would likely be a long, strange URL, not the official PayPal website.</li>
+                        <li><strong>Spelling and Grammar Mistakes:</strong> "PayPaI" with a capital 'I' is a subtle but clear mistake. Professional communications are usually proofread.</li>
+                    </ul>
+                </div>
+
+                <!-- Fake Websites -->
+                <div id="websites" class="tab-content prose max-w-none">
+                    <h2 class="text-2xl font-semibold mb-4">How to Spot Fake Websites</h2>
+                    <p>If you click a link in a phishing email, you might be taken to a fake website that looks just like the real thing. Here’s how to tell the difference.</p>
+                    
+                    <div class="my-6 p-4 border rounded-lg bg-gray-50">
+                        <img src="https://placehold.co/800x400/e2e8f0/4a5568?text=Example+of+a+Fake+Login+Page" alt="Fake login page example" class="w-full rounded-md shadow-md">
+                        <p class="text-center text-sm mt-2 text-gray-600">A typical fake login page. It looks real, but the URL tells a different story.</p>
+                    </div>
+
+                    <h3 class="text-xl font-semibold mt-6 mb-2">Key Things to Check:</h3>
+                    <ol>
+                        <li><strong>Check the URL:</strong> This is the most important step. Is the domain correct? Look for slight misspellings like `bankofamerica.co` instead of `bankofamerica.com`. The fake site might also be on a completely unrelated domain.</li>
+                        <li><strong>Look for HTTPS:</strong> The lock icon (🔒) and "https:// " in the address bar mean the connection is encrypted. However, scammers can also get SSL certificates, so this isn't a guarantee of safety. It's a good sign, but always check the domain too.</li>
+                        <li><strong>Poor Design or Functionality:</strong> The site might look slightly "off." Logos may be low-resolution, links might not work, or the layout might be broken on mobile devices.</li>
+                        <li><strong>No Contact Information:</strong> Legitimate companies provide ways to contact them. If there's no "About Us" or "Contact" page with a physical address and phone number, be suspicious.</li>
+                    </ol>
+                </div>
+                
+                <!-- Social Engineering -->
+                <div id="tactics" class="tab-content prose max-w-none">
+                    <h2 class="text-2xl font-semibold mb-4">Common Social Engineering Tactics</h2>
+                    <p>Social engineering is the art of psychological manipulation to trick users into making security mistakes or giving away sensitive information. Attackers exploit human emotions to bypass security controls.</p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                            <h4 class="font-bold text-yellow-900">Urgency & Fear</h4>
+                            <p class="text-yellow-800">Attackers create a sense of panic. "Your account will be deleted in 24 hours!" or "Malware detected on your computer!" This makes you act quickly without thinking.</p>
+                        </div>
+                        <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
+                            <h4 class="font-bold text-green-900">Authority</h4>
+                            <p class="text-green-800">Impersonating a person of authority, like a CEO or an IT administrator. "The CEO needs you to process this wire transfer immediately." People are less likely to question a request from a boss.</p>
+                        </div>
+                        <div class="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                            <h4 class="font-bold text-purple-900">Greed & Curiosity</h4>
+                            <p class="text-purple-800">Appealing to a desire for gain or information. "You've won a lottery!" or "See these compromising photos of a celebrity." Curiosity can lead to dangerous clicks.</p>
+                        </div>
+                        <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                            <h4 class="font-bold text-red-900">Helpfulness & Trust</h4>
+                            <p class="text-red-800">The attacker may pose as a coworker or tech support, offering to help with a problem. "I'm from IT, I need your password to install a security update."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Best Practices -->
+                <div id="best-practices" class="tab-content prose max-w-none">
+                    <h2 class="text-2xl font-semibold mb-4">Best Practices to Stay Safe</h2>
+                    <p>Following these simple guidelines can dramatically reduce your risk of falling victim to a phishing attack.</p>
+                    
+                    <h3 class="font-semibold text-lg mt-6">Do:</h3>
+                    <ul>
+                        <li><strong>Think Before You Click:</strong> Always be skeptical of unexpected emails or messages. If it seems too good to be true, it probably is.</li>
+                        <li><strong>Verify the Sender:</strong> Check the sender's email address carefully.</li>
+                        <li><strong>Use Bookmarks:</strong> Access sensitive sites like your bank or email by typing the address directly into your browser or using a bookmark. Don't rely on links in emails.</li>
+                        <li><strong>Enable Multi-Factor Authentication (MFA):</strong> MFA adds an extra layer of security, making it much harder for attackers to access your accounts even if they steal your password.</li>
+                        <li><strong>Report Phishing Attempts:</strong> Use the "Report Phishing" button in your email client, or forward the suspicious email to your IT/security department.</li>
+                    </ul>
+
+                    <h3 class="font-semibold text-lg mt-6 text-red-700">Don't:</h3>
+                    <ul class="text-red-900">
+                        <li><strong>Don't Give Out Personal Information:</strong> Legitimate companies will never ask for your password, Social Security number, or other sensitive data via email.</li>
+                        <li><strong>Don't Download Unexpected Attachments:</strong> Attachments can contain malware. Be wary of invoices, reports, or faxes you weren't expecting.</li>
+                        <li><strong>Don't Be Pressured:</strong> Resist the urge to act immediately. Scammers want you to panic. Take a moment to calm down and analyze the situation.</li>
+                    </ul>
+                </div>
+
+                <!-- Interactive Quiz -->
+                <div id="quiz" class="tab-content">
+                    <h2 class="text-2xl font-semibold mb-4">Test Your Knowledge</h2>
+                    <p class="mb-6">Let's see what you've learned. Answer the following questions to check your phishing detection skills.</p>
+                    
+                    <div id="quiz-container">
+                        <!-- Questions will be injected here by JavaScript -->
+                    </div>
+
+                    <div id="quiz-results" class="hidden mt-8 p-6 bg-blue-50 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-blue-800">Quiz Complete!</h3>
+                        <p class="text-lg mt-2">You scored <span id="quiz-score" class="font-bold"></span> out of <span id="quiz-total" class="font-bold"></span>.</p>
+                        <p id="quiz-feedback" class="mt-2 font-medium"></p>
+                        <button id="restart-quiz-btn" class="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                            Try Again
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="text-center mt-8 text-sm text-gray-500">
+            <p>&copy; 2025 Security Awareness Inc By Sahil Oad. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Deactivate all tabs and content
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Activate clicked tab and content
+                    tab.classList.add('active');
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // --- Quiz Logic ---
+            const quizData = [
+                {
+                    question: "You receive an email from 'Netflix Support' saying your account is on hold. It asks you to click a link to update your payment details. What is the most suspicious part?",
+                    options: [
+                        "The request to update payment details.",
+                        "The sense of urgency it creates.",
+                        "The fact that it was sent via email.",
+                        "All of the above."
+                    ],
+                    answer: "All of the above."
+                },
+                {
+                    question: "When hovering over a link in an email, the URL shown in the status bar is different from the text of the link. What should you do?",
+                    options: [
+                        "Click the link to see if it's legitimate.",
+                        "Assume the email is safe and from a trusted sender.",
+                        "Do not click the link and report the email as phishing.",
+                        "Reply to the email and ask for the correct link."
+                    ],
+                    answer: "Do not click the link and report the email as phishing."
+                },
+                {
+                    question: "An email from your CEO asks you to urgently purchase several gift cards for a client and send them the codes. What kind of social engineering tactic is this?",
+                    options: [
+                        "Curiosity",
+                        "Greed",
+                        "Authority",
+                        "Fear"
+                    ],
+                    answer: "Authority"
+                },
+                {
+                    question: "Which of these website URLs is most likely a phishing site?",
+                    options: [
+                        "https://login.microsoftonline.com",
+                        "https://www.google.com",
+                        "https://amazon-support.help.com",
+                        "https://appleid.apple.com"
+                    ],
+                    answer: "https://amazon-support.help.com"
+                }
+            ];
+
+            const quizContainer = document.getElementById('quiz-container');
+            const quizResults = document.getElementById('quiz-results');
+            const quizScore = document.getElementById('quiz-score');
+            const quizTotal = document.getElementById('quiz-total');
+            const quizFeedback = document.getElementById('quiz-feedback');
+            const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+            let currentQuestionIndex = 0;
+            let score = 0;
+
+            function loadQuiz() {
+                quizContainer.innerHTML = '';
+                quizResults.classList.add('hidden');
+                currentQuestionIndex = 0;
+                score = 0;
+                showQuestion();
+            }
+
+            function showQuestion() {
+                const questionData = quizData[currentQuestionIndex];
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('mb-8');
+                
+                let optionsHTML = '';
+                questionData.options.forEach(option => {
+                    optionsHTML += `<div class="quiz-option p-4 my-2 border-2 border-gray-300 rounded-lg cursor-pointer transition-colors duration-200">
+                                        ${option}
+                                    </div>`;
+                });
+
+                questionElement.innerHTML = `
+                    <h3 class="text-lg font-semibold mb-4">${currentQuestionIndex + 1}. ${questionData.question}</h3>
+                    <div class="options-container">
+                        ${optionsHTML}
+                    </div>
+                    <div class="feedback mt-2 text-sm font-medium"></div>
+                `;
+
+                quizContainer.appendChild(questionElement);
+
+                const options = questionElement.querySelectorAll('.quiz-option');
+                options.forEach(option => {
+                    option.addEventListener('click', () => selectAnswer(option, questionData.answer, options));
+                });
+            }
+
+            function selectAnswer(selectedOption, correctAnswer, allOptions) {
+                // Prevent further clicks
+                allOptions.forEach(opt => opt.style.pointerEvents = 'none');
+                
+                selectedOption.classList.add('selected');
+
+                if (selectedOption.innerText === correctAnswer) {
+                    score++;
+                    selectedOption.classList.add('correct');
+                    selectedOption.closest('div.mb-8').querySelector('.feedback').innerHTML = `<p class="text-green-600">Correct! Well done.</p>`;
+                } else {
+                    selectedOption.classList.add('incorrect');
+                    selectedOption.closest('div.mb-8').querySelector('.feedback').innerHTML = `<p class="text-red-600">Not quite. The correct answer is: <strong>${correctAnswer}</strong></p>`;
+                    // Highlight the correct answer
+                    allOptions.forEach(opt => {
+                        if (opt.innerText === correctAnswer) {
+                            opt.classList.add('correct');
+                        }
+                    });
+                }
+
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    if (currentQuestionIndex < quizData.length) {
+                        showQuestion();
+                    } else {
+                        showResults();
+                    }
+                }, 2000);
+            }
+
+            function showResults() {
+                quizScore.textContent = score;
+                quizTotal.textContent = quizData.length;
+                quizResults.classList.remove('hidden');
+
+                let feedbackText = '';
+                const percentage = (score / quizData.length) * 100;
+                if (percentage === 100) {
+                    feedbackText = "Excellent! You're a phishing detection expert.";
+                    quizFeedback.className = "mt-2 font-medium text-green-700";
+                } else if (percentage >= 75) {
+                    feedbackText = "Great job! You have a good eye for phishing attempts.";
+                    quizFeedback.className = "mt-2 font-medium text-blue-700";
+                } else {
+                    feedbackText = "Good start, but a review of the materials could be helpful. Stay vigilant!";
+                    quizFeedback.className = "mt-2 font-medium text-yellow-700";
+                }
+                quizFeedback.textContent = feedbackText;
+            }
+            
+            restartQuizBtn.addEventListener('click', loadQuiz);
+
+            // Initial load
+            loadQuiz();
+        });
+    </script>
+</body>
+</html>
