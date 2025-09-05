@@ -42,7 +42,7 @@ A step-by-step guide to installing and running your project.
 
 Clone the repository:
 
-git clone [https://github.com/your-username/your-project-name.git](https://github.com/SahilOad/codealpha_tasks.git)
+git clone [https://github.com/SahilOad/codealpha_tasks.git](https://github.com/SahilOad/codealpha_tasks.git)
 
 Navigate into the project directory:
 
